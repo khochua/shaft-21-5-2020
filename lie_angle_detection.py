@@ -30,8 +30,15 @@ def get_box_dimensions(outputs, height, width):
         if conf > 0.5:
             center_x = int(detect[0]*width)
             center_y = int(detect[1]*height)
-            
+            w = int(detect[0] * width)
+            h = int(detect[3] * height)
+            x = int(center_x - w/2)
+            y = int(center_y - h/2)
 
+            boxes.append([x, y, w, h])
+            confs.append(float(conf))
+            class_ids.append(class_id)
+    return boxes, confs, class_ids
 
 def detect_shaft(img, net, outputLayers):
     blob = cv2.dnn.blobFromImage(img, scalefactor=0.00392, size=(

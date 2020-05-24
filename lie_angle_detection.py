@@ -153,7 +153,7 @@ def image_detect(img_path):
     print(angle)
     cv2.putText(image, str(round(angle, 2)), (int(width/3), int(height - 30)),
                 cv2.FONT_HERSHEY_PLAIN, 5, (0, 255, 255), 2)
-    cv2.imwrite('impp1.jpg', image)
+    cv2.imwrite('output/impp1.jpg', image)
 
 if __name__ == "__main__":
-    image_detect('img13.jpg')
+    image_detect('images/1.jpg')

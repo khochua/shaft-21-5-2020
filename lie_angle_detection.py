@@ -157,3 +157,4 @@ def image_detect(img_path):
 
 if __name__ == "__main__":
     image_detect('images/1.jpg')
+    
